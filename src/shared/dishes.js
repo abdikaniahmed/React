@@ -13,7 +13,7 @@ export const DISHES =
             id: 0,
             rating: 5,
             comment: "Imagine all the eatables, living in conFusion!",
-            author: "John Lemon",
+            author: "John Lemon 1",
             date: "2012-10-16T17:57:28.556094Z"
             },
             {
@@ -51,14 +51,14 @@ export const DISHES =
         image: 'assets/images/zucchipakoda.png',
         category: 'appetizer',
         label:'',
-        price:'1.99',
+        price:'7.99',
         description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
         comments: [
             {
             id: 0,
             rating: 5,
             comment: "Imagine all the eatables, living in conFusion!",
-            author: "John Lemon",
+            author: "John Lemon 2",
             date: "2012-10-16T17:57:28.556094Z"
             },
             {
@@ -104,7 +104,7 @@ export const DISHES =
             id: 0,
             rating: 5,
             comment: "Imagine all the eatables, living in conFusion!",
-            author: "John Lemon",
+            author: "John Lemon 3",
             date: "2012-10-16T17:57:28.556094Z"
             },
             {
@@ -150,7 +150,7 @@ export const DISHES =
             id: 0,
             rating: 5,
             comment: "Imagine all the eatables, living in conFusion!",
-            author: "John Lemon",
+            author: "John Lemon 4",
             date: "2012-10-16T17:57:28.556094Z"
             },
             {
