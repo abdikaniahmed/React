@@ -1,6 +1,6 @@
 
 import React, { Component, Fragment } from 'react';
-import { Navbar, NavbarBrand,Nav, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 
@@ -47,7 +47,7 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/contact">
+                                    <NavLink className="nav-link" to="/contactus">
                                     <span className="fa fa-address-card fa-lg"></span> Contact 
                                     </NavLink>
                                 </NavItem>
