@@ -32,7 +32,7 @@ const Menu = (props) => {
                     <BreadcrumbItem><Link to='/Home'>Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active>Mene</BreadcrumbItem>
                 </Breadcrumb>
-                <div className="col">
+                <div className="col-12">
                     <h3>Menu</h3>
                     <hr />
                 </div>
