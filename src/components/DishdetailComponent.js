@@ -122,62 +122,62 @@ class CommentForm extends Component {
           </Button>
         </div>
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>Submit Comment </ModalHeader>
-          <ModalBody>
-            <LocalForm onSubmit={(values) => handleSubmit(values)}>
-              <Label htmlFor="rating">Rating</Label>
-              <Control.select
-                model=".rating"
-                name="rating"
-                className="form-control"
-              >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Control.select>
-              <Label htmlFor="yname" className="mt-2">
-                lastname
-              </Label>
-              <Control.text
-                model=".yname"
-                id="yname"
-                name="yname"
-                placeholder="Your Name"
-                className="form-control mb-2"
-                validators={{
-                  required,
-                  minLength: minLength(3),
-                  maxLength: maxLength(15)
-                }}
-              />
-              <Errors
-                className="text-danger"
-                model=".yname"
-                show="touched"
-                messages={{
-                  required: "Required ",
-                  minLength: "Must be greater than 2 characters",
-                  maxLength: "Must be 15 characters or less"
-                }}
-              />
-              <Label htmlFor="comment">Your feedback</Label>
-              <Control.textarea
-                model=".comment"
-                rows="6"
-                name="comment"
-                id="comment"
-                className="form-control"
-                placeholder="Write your Comment"
-              ></Control.textarea>
+              <ModalHeader toggle={this.toggleModal}>Submit Comment </ModalHeader>
+              <ModalBody>
+                <LocalForm onSubmit={(values) => handleSubmit(values)}>
+                  <Label htmlFor="rating">Rating</Label>
+                  <Control.select
+                    model=".rating"
+                    name="rating"
+                    className="form-control"
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </Control.select>
+                  <Label htmlFor="yname" className="mt-2">
+                    lastname
+                  </Label>
+                  <Control.text
+                    model=".yname"
+                    id="yname"
+                    name="yname"
+                    placeholder="Your Name"
+                    className="form-control mb-2"
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15)
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".yname"
+                    show="touched"
+                    messages={{
+                      required: "Required ",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less"
+                    }}
+                  />
+                  <Label htmlFor="comment">Your feedback</Label>
+                  <Control.textarea
+                    model=".comment"
+                    rows="6"
+                    name="comment"
+                    id="comment"
+                    className="form-control"
+                    placeholder="Write your Comment"
+                  ></Control.textarea>
 
-              <Button type="submit" color="primary" className="mt-2">
-                Submit
-              </Button>
-            </LocalForm>
-          </ModalBody>
-        </Modal>
+                  <Button type="submit" color="primary" className="mt-2">
+                    Submit
+                  </Button>
+                </LocalForm>
+              </ModalBody>
+            </Modal>
       </div>
     );
   }
