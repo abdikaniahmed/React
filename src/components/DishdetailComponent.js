@@ -20,13 +20,7 @@ function RenderDish({ dish }) {
   );
 }
 
-function handleSubmit(values) {
-  console.log("Current state is " + JSON.stringify(values));
-  alert("Current state is " + JSON.stringify(values));
-  ///event.preventDefault();
-}
-
-function RenderComments({ comments }) {
+function RenderComments({comments, addComment, dishId}) {
   if (comments != null) {
     return (
       <div>
@@ -35,9 +29,8 @@ function RenderComments({ comments }) {
           {comments.map((comment) => {
             return (
               <li key={comment.id}>
-                <p>{comment.comment}</p>
-                <p>
-                  --{comments.author} ,
+                <p>{comment.comment} <br />
+                  --{comment.author} ,
                   {new Intl.DateTimeFormat("en-US", {
                     year: "numeric",
                     month: "short",
@@ -48,7 +41,9 @@ function RenderComments({ comments }) {
             );
           })}
         </ul>
-         <CommentForm />
+
+      <CommentForm dishId={dishId} addComment={addComment} />
+
       </div>
     );
   } else {
@@ -79,7 +74,7 @@ const DishDetail = (props) => {
             <RenderDish dish={props.dish} />
           </div>
           <div className="col-md">
-            <RenderComments comments={props.comments} />
+            <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
           </div>
         </div>
       </div>
@@ -105,8 +100,7 @@ class CommentForm extends Component {
   }
   handleSubmitComment(values) {
     this.toggleModal();
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
   }
   handleBlur = (field) => (evt) => {
     this.setState({
@@ -124,7 +118,7 @@ class CommentForm extends Component {
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
               <ModalHeader toggle={this.toggleModal}>Submit Comment </ModalHeader>
               <ModalBody>
-                <LocalForm onSubmit={(values) => handleSubmit(values)}>
+                <LocalForm onSubmit={(values) => this.handleSubmitComment(values)}>
                   <Label htmlFor="rating">Rating</Label>
                   <Control.select
                     model=".rating"
@@ -137,13 +131,13 @@ class CommentForm extends Component {
                     <option>4</option>
                     <option>5</option>
                   </Control.select>
-                  <Label htmlFor="yname" className="mt-2">
+                  <Label htmlFor="author" className="mt-2">
                     lastname
                   </Label>
                   <Control.text
-                    model=".yname"
-                    id="yname"
-                    name="yname"
+                    model=".author"
+                    id="author"
+                    name="author"
                     placeholder="Your Name"
                     className="form-control mb-2"
                     validators={{
